@@ -25,17 +25,11 @@ export default class CardComponent extends Component {
                                 style={{ height:200, width:null, flex: 1 }} />
                         </CardItem> : null
                 }
-                <CardItem style={{ height: 40 }}>
+
+                <CardItem style={{ height: 35 }}>
                     <Text>{ data.active_votes.length } likes</Text>
                 </CardItem>
-                <CardItem>
-                    <Text style={{ fontWeight:'900'}}>{ data.title }</Text>
-                </CardItem>
-                <CardItem>
-                    <Text>
-                        { data.body.replace(/\n/g,' ').slice(0, 200) }
-                    </Text>
-                </CardItem>
+
                 <CardItem style={{ height:45 }}>
                     <Left>
                         <Button transparent>
@@ -53,6 +47,16 @@ export default class CardComponent extends Component {
                     <Right>
                         <Text>{ data.pending_payout_value }</Text>
                     </Right>
+                </CardItem>
+
+                <CardItem>
+                    <Text style={{ fontWeight:'900'}}>{ data.title }</Text>
+                </CardItem>
+
+                <CardItem>
+                    <Text>
+                        { data.body.replace(/\n/g,' ').slice(0, 200) }
+                    </Text>
                 </CardItem>
             </Card>
         );
